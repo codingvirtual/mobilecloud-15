@@ -4,6 +4,8 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+import vandy.mooc.activities.AcronymActivity;
 
 /**
  * Broadcast receiver that will remove all the expired acronyms at regular
@@ -61,5 +63,6 @@ public class DeleteCacheReceiver extends BroadcastReceiver {
         // from the cache.
         // TODO -- you fill in here by calling the appropriate method in 
         // the ContentProviderTimeoutCache.
+        new ContentProviderTimeoutCache(context).removeExpiredAcronyms();
     }
 }
